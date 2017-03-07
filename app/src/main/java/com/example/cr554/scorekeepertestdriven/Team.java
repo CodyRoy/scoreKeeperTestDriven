@@ -7,30 +7,32 @@ import android.widget.TextView;
  */
 
 public class Team {
-    private int score;
-    private TextView scoreDisplay;
+    private int mScore;
+    private TextView mScoreDisplay;
 
+    //non-empty constructor creates dependency injection
+    public Team(int score, TextView scoreDisplay){
+        mScore= score;
+        mScoreDisplay=scoreDisplay;
+    }
+
+    //class method to ++ score
     public void incrementScore(){
-        score++;
+        mScore++;
         updateDisplay();
     }
 
+    //class method to -- score;
     public void decrementScore(){
-        score--;
+        mScore--;
         updateDisplay();
     }
 
+    //class method to update the display.
     public void updateDisplay(){
-        TextView display = getScoreDisplay();
+        String scoreAsString = Integer.toString(mScore);
+        mScoreDisplay.setText(scoreAsString);
 
-    }
-
-    public TextView getScoreDisplay(){
-        return scoreDisplay;
-    }
-
-    public void setScoreDisplay(TextView textView){
-        scoreDisplay = textView;
     }
 
 }
