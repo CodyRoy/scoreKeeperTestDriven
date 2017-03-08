@@ -19,13 +19,11 @@ public class Team {
     //class method to ++ score
     public void incrementScore(){
         mScore++;
-        updateDisplay();
     }
 
     //class method to -- score;
     public void decrementScore(){
         mScore--;
-        updateDisplay();
     }
 
     //class method to update the display.
@@ -34,5 +32,15 @@ public class Team {
         mScoreDisplay.setText(scoreAsString);
 
     }
+
+    //getters
+    public TextView getmScoreDisplay() {
+        return mScoreDisplay;
+    }
+    public int getmScore() {
+        return mScore;
+    }
+
+
 
 }
